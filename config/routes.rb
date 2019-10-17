@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :messages
+  resources :channels
   get '/profile', to: "users#profile"
   post '/login', to: "auth#login"
   post '/signup', to: "users#create"
