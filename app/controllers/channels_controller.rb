@@ -5,6 +5,11 @@ class ChannelsController < ApplicationController
     render json: channels
   end
 
+  def show
+    channel = Channel.find(params[:id])
+    render json: channel.messages
+  end
+
   def create
    channel = Channel.create(channel_params)
    if channel.valid?
