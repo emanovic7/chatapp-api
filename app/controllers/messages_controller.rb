@@ -2,7 +2,12 @@ class MessagesController < ApplicationController
 
   def index
     messages = Message.all
-    render json: messages
+    render json: messages, include: [:user]
+  end
+
+  def show
+    message = Message.find(params[:id])
+    render json: message, include: [:user]
   end
 
   def create
