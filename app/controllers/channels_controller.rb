@@ -36,7 +36,7 @@ class ChannelsController < ApplicationController
 
  private
    def channel_params
-     params.permit(:name, :img)
+     params.permit(:name)
    end
 
 end
