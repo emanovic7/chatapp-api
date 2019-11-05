@@ -7,7 +7,7 @@ class ChannelsController < ApplicationController
 
   def show
     channel = Channel.find(params[:id])
-    render json: channel.messages
+    render json: channel.messages, include: [:user]
   end
 
   def create

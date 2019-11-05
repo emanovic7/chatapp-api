@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
   def create
    message = Message.create(message_params)
    if message.valid?
-     render json: message
+     render json: message, include: [:user]
    else
      render json: {errors: message.errors.full_messages}, status: 422
    end
